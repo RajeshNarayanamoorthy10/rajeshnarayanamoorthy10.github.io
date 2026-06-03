@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajesh Narayanamoorthy — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Portfolio of Rajesh Narayanamoorthy — Data Scientist and ML Engineer with 7 years of enterprise experience. Projects in ML, NLP, Data Engineering, and BI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --border: rgba(0,0,0,0.10);
+      --border-hover: rgba(0,0,0,0.22);
+      --text-primary: #1A1A18;
+      --text-secondary: #5A5A56;
+      --text-muted: #9A9A94;
+      --accent: #1F4E79;
+      --accent-light: #E6F1FB;
+      --accent-mid: #2E75B6;
+      --green-bg: #EAF3DE;
+      --green-text: #27500A;
+      --green-border: #C0DD97;
+      --green-dot: #639922;
+      --tag-ml-bg: #E6F1FB;
+      --tag-ml-text: #0C447C;
+      --tag-bi-bg: #E1F5EE;
+      --tag-bi-text: #085041;
+      --tag-nlp-bg: #EEEDFE;
+      --tag-nlp-text: #3C3489;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141412;
+        --surface: #1E1E1C;
+        --border: rgba(255,255,255,0.10);
+        --border-hover: rgba(255,255,255,0.22);
+        --text-primary: #F0F0EC;
+        --text-secondary: #A8A8A2;
+        --text-muted: #68685E;
+        --accent: #85B7EB;
+        --accent-light: #042C53;
+        --accent-mid: #85B7EB;
+        --green-bg: #173404;
+        --green-text: #C0DD97;
+        --green-border: #27500A;
+        --green-dot: #639922;
+        --tag-ml-bg: #042C53;
+        --tag-ml-text: #B5D4F4;
+        --tag-bi-bg: #04342C;
+        --tag-bi-text: #9FE1CB;
+        --tag-nlp-bg: #26215C;
+        --tag-nlp-text: #CECBF6;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0.85rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 17px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 0 4rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .avail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 20px;
+      background: var(--green-bg);
+      color: var(--green-text);
+      border: 0.5px solid var(--green-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-dot);
+      animation: pulse 2.2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 7vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .hero-title {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-bio {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    /* SECTION */
+    section { padding: 4rem 0; border-bottom: 0.5px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 0.85rem;
+      width: fit-content;
+    }
+
+    .tag-ml { background: var(--tag-ml-bg); color: var(--tag-ml-text); }
+    .tag-bi { background: var(--tag-bi-bg); color: var(--tag-bi-text); }
+    .tag-nlp { background: var(--tag-nlp-bg); color: var(--tag-nlp-text); }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 1.25rem;
+    }
+
+    .stack-pill {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--bg);
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border);
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .gh-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .gh-link:hover { color: var(--text-primary); }
+
+    .gh-icon {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    .record-count {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .skill-group-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border);
+    }
+
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+      align-items: start;
+    }
+
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-role {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .exp-dates {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-name { letter-spacing: -0.5px; }
+      .nav-links { display: none; }
+    }
+
+    .about-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .about-text p + p { margin-top: 1rem; }
+
+    .cert-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .cert-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-mid);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeIn 0.55s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.05s; }
+    .fade-in:nth-child(2) { animation-delay: 0.12s; }
+    .fade-in:nth-child(3) { animation-delay: 0.19s; }
+    .fade-in:nth-child(4) { animation-delay: 0.26s; }
+    .fade-in:nth-child(5) { animation-delay: 0.33s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-name">Rajesh N.</a>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="container">
+    <div class="hero">
+      <div class="avail-badge fade-in">
+        <span class="avail-dot"></span>
+        Open to opportunities in Chennai
+      </div>
+      <h1 class="hero-name fade-in">Rajesh<br><em>Narayanamoorthy</em></h1>
+      <p class="hero-title fade-in">Data Scientist &nbsp;·&nbsp; ML Engineer &nbsp;·&nbsp; Power BI Certified (PL-300)</p>
+      <p class="hero-bio fade-in">7 years of enterprise technology experience, now fully transitioned into Data Science and Machine Learning. I build end-to-end ML pipelines — from raw data through EDA, feature engineering, model training, and interactive deployment.</p>
+      <div class="hero-actions fade-in">
+        <a class="btn btn-primary" href="https://linkedin.com/in/rajesh-narayanamoorthy" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/RajeshNarayanamoorthy10" target="_blank">
+          <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-secondary" href="mailto:rajeshnarayanamoorthy@gmail.com">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <p class="section-label">Projects</p>
+      <div class="projects-grid">
+
+        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/mobile-segmentation-recommendation" target="_blank">
+          <span class="project-tag tag-ml">Unsupervised ML</span>
+          <h3 class="project-title">Mobile Product Segmentation & Recommendation</h3>
+          <p class="project-desc">Turned 50,000 global mobile product reviews into a consumer intelligence tool — uncovering how customers perceive phones beyond price and brand, with a live recommendation engine deployed on Streamlit.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">K-Means</span>
+            <span class="stack-pill">Cosine Similarity</span>
+            <span class="stack-pill">Streamlit</span>
+            <span class="stack-pill">scikit-learn</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">50K records</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/marketing-campaign-project" target="_blank">
+          <span class="project-tag tag-ml">Supervised ML</span>
+          <h3 class="project-title">Marketing Campaign Performance Analysis</h3>
+          <p class="project-desc">Analysed 161,000+ campaigns across D2C beauty brands — built revenue forecasting and profitability classification models to help teams prioritize budget before campaigns launch.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">Random Forest</span>
+            <span class="stack-pill">scikit-learn</span>
+            <span class="stack-pill">Regression</span>
+            <span class="stack-pill">Classification</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">161K records</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/International-Debt-Analysis-System" target="_blank">
+          <span class="project-tag tag-bi">Data Engineering</span>
+          <h3 class="project-title">International Debt Analysis System</h3>
+          <p class="project-desc">End-to-end analytics pipeline on World Bank debt statistics — structured MySQL storage, 30 SQL queries, and an interactive Streamlit dashboard for multi-country macro-finance insights.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">MySQL</span>
+            <span class="stack-pill">pandas</span>
+            <span class="stack-pill">Streamlit</span>
+            <span class="stack-pill">Plotly</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">World Bank data</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/sales-management-system" target="_blank">
+          <span class="project-tag tag-bi">Analytics System</span>
+          <h3 class="project-title">Sales Intelligence Hub</h3>
+          <p class="project-desc">Branch-level sales management system built end-to-end — MySQL schema, Python ETL pipeline, 15 SQL queries with window functions, and a role-based Streamlit dashboard with admin and viewer access.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">MySQL</span>
+            <span class="stack-pill">SQLAlchemy</span>
+            <span class="stack-pill">Streamlit</span>
+            <span class="stack-pill">pandas</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">RBAC + Analytics</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+        <div>
+          <p class="skill-group-label">Languages</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">ML & Data Science</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Regression</span>
+            <span class="skill-tag">Classification</span>
+            <span class="skill-tag">Clustering</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Deep Learning</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">ML Libraries</p>
+          <div class="skill-tags">
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Keras</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Visualization & BI</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Plotly</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Data Engineering</p>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQLAlchemy</span>
+            <span class="skill-tag">ETL</span>
+            <span class="skill-tag">EDA</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Tools</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">Power Automate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div>
+            <p class="exp-role">Data Science & ML Engineer — Structured Career Transition</p>
+            <p class="exp-company">GUVI Bootcamp · IIT Madras Incubated · Bengaluru</p>
+          </div>
+          <p class="exp-dates">Nov 2024 – Present</p>
+        </div>
+        <div class="exp-item">
+          <div>
+            <p class="exp-role">Specialist — Operations Analytics & Reporting</p>
+            <p class="exp-company">LTIMindtree · Chennai</p>
+          </div>
+          <p class="exp-dates">Jul 2021 – Nov 2024</p>
+        </div>
+        <div class="exp-item">
+          <div>
+            <p class="exp-role">Technical Analyst</p>
+            <p class="exp-company">Infosys · Mysore</p>
+          </div>
+          <p class="exp-dates">Dec 2017 – Jul 2021</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I spent 7 years in enterprise technology — managing large-scale Microsoft 365 environments at Infosys and leading operations analytics at LTIMindtree — before making a deliberate transition into Data Science and Machine Learning.</p>
+          <p>What drives me is the combination of business intuition and technical depth: asking the right question before touching the data, then building something that actually answers it. I think in pipelines — from messy raw data to clean insights to something a non-technical stakeholder can act on.</p>
+          <p>Based in Chennai. Open to Data Scientist and ML Engineer roles.</p>
+        </div>
+        <div>
+          <p class="skill-group-label" style="margin-bottom: 1rem;">Certifications</p>
+          <ul class="cert-list">
+            <li class="cert-item">
+              <span class="cert-dot"></span>
+              <span>Microsoft Power BI Data Analyst — PL-300 Certified (2024)</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-dot"></span>
+              <span>Data Science & ML Bootcamp — GUVI, IIT Madras Incubated</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-dot"></span>
+              <span>Microsoft Fabric — Data Pipelines, Lakehouse, Synapse (Self-paced)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="footer-name">Rajesh Narayanamoorthy</p>
+      <p class="footer-contact">rajeshnarayanamoorthy@gmail.com &nbsp;·&nbsp; Chennai, India</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
