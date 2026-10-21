@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajesh Narayanamoorthy — Data Scientist & ML Engineer</title>
-  <meta name="description" content="Portfolio of Rajesh Narayanamoorthy — Data Scientist and ML Engineer with 7 years of enterprise experience. Projects in ML, NLP, Data Engineering, and BI." />
+  <meta name="description" content="Portfolio of Rajesh Narayanamoorthy — Data Scientist and ML Engineer with 7 years of enterprise experience. Projects in ML, NLP, Generative AI, and BI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
@@ -32,6 +32,11 @@
       --tag-bi-text: #085041;
       --tag-nlp-bg: #EEEDFE;
       --tag-nlp-text: #3C3489;
+      --tag-ai-bg: #F3EFFE;
+      --tag-ai-text: #5B21B6;
+      --tag-capstone-bg: #FEF9EC;
+      --tag-capstone-text: #92400E;
+      --tag-capstone-border: #FCD34D;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -56,6 +61,11 @@
         --tag-bi-text: #9FE1CB;
         --tag-nlp-bg: #26215C;
         --tag-nlp-text: #CECBF6;
+        --tag-ai-bg: #2E1B5C;
+        --tag-ai-text: #C4B5FD;
+        --tag-capstone-bg: #3B2A04;
+        --tag-capstone-text: #FCD34D;
+        --tag-capstone-border: #92400E;
       }
     }
 
@@ -241,6 +251,23 @@
       .projects-grid { grid-template-columns: 1fr; }
     }
 
+    /* Featured card spans full width */
+    .project-card.featured {
+      grid-column: 1 / -1;
+      border-color: rgba(91, 33, 182, 0.2);
+      background: linear-gradient(135deg, var(--surface) 0%, #FAF8FF 100%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .project-card.featured {
+        background: linear-gradient(135deg, var(--surface) 0%, #1C1630 100%);
+      }
+    }
+
+    .project-card.featured:hover {
+      border-color: rgba(91, 33, 182, 0.4);
+    }
+
     .project-card {
       background: var(--surface);
       border: 0.5px solid var(--border);
@@ -258,6 +285,14 @@
       transform: translateY(-2px);
     }
 
+    /* Tag row — allows multiple tags side by side */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 0.85rem;
+    }
+
     .project-tag {
       display: inline-flex;
       align-items: center;
@@ -266,13 +301,18 @@
       letter-spacing: 0.3px;
       padding: 3px 9px;
       border-radius: 6px;
-      margin-bottom: 0.85rem;
       width: fit-content;
     }
 
-    .tag-ml { background: var(--tag-ml-bg); color: var(--tag-ml-text); }
-    .tag-bi { background: var(--tag-bi-bg); color: var(--tag-bi-text); }
-    .tag-nlp { background: var(--tag-nlp-bg); color: var(--tag-nlp-text); }
+    .tag-ml      { background: var(--tag-ml-bg);       color: var(--tag-ml-text); }
+    .tag-bi      { background: var(--tag-bi-bg);       color: var(--tag-bi-text); }
+    .tag-nlp     { background: var(--tag-nlp-bg);      color: var(--tag-nlp-text); }
+    .tag-ai      { background: var(--tag-ai-bg);       color: var(--tag-ai-text); }
+    .tag-capstone {
+      background: var(--tag-capstone-bg);
+      color: var(--tag-capstone-text);
+      border: 0.5px solid var(--tag-capstone-border);
+    }
 
     .project-title {
       font-family: 'DM Serif Display', serif;
@@ -404,6 +444,12 @@
       padding-top: 3px;
     }
 
+    /* Career break style */
+    .exp-item.career-break .exp-role {
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
     /* ABOUT */
     .about-grid {
       display: grid;
@@ -512,11 +558,11 @@
       <p class="hero-title fade-in">Data Scientist &nbsp;·&nbsp; ML Engineer &nbsp;·&nbsp; Power BI Certified (PL-300)</p>
       <p class="hero-bio fade-in">7 years of enterprise technology experience, now fully transitioned into Data Science and Machine Learning. I build end-to-end ML pipelines — from raw data through EDA, feature engineering, model training, and interactive deployment.</p>
       <div class="hero-actions fade-in">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/rajeshnarayanamoorthy" target="_blank">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/rajesh-narayanamoorthy" target="_blank">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
-        <a class="btn btn-secondary" href="https://github.com/RajeshNarayanamoorthy10" target="_blank">
+        <a class="btn btn-secondary" href="https://github.com/Rajesh-Narayanamoorthy" target="_blank">
           <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
@@ -531,75 +577,94 @@
     <section id="projects">
       <p class="section-label">Projects</p>
       <div class="projects-grid">
-                <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/clinical-trial-disease-classification" target="_blank">
-          <span class="project-tag tag-nlp">NLP</span>
-          <h3 class="project-title">Clinical Trial Disease Category Classification</h3>
-          <p class="project-desc">Classified 60,000+ clinical trial summaries into 8 disease categories using NLP — from raw medical text through TF-IDF feature engineering to a tuned SVM classifier, deployed with live prediction and confidence scoring.</p>
+
+        <!-- 1. ACKO — Capstone (featured, full-width) -->
+        <a class="project-card featured" href="https://github.com/Rajesh-Narayanamoorthy/Acko-Insurance-AI-Platform" target="_blank">
+          <div class="tag-row">
+            <span class="project-tag tag-capstone">🏆 Capstone</span>
+            <span class="project-tag tag-ai">Generative AI</span>
+            <span class="project-tag tag-ml">RAG</span>
+          </div>
+          <h3 class="project-title">Acko Insurance AI Platform</h3>
+          <p class="project-desc">Insurance underwriters spend hours hunting through policy documents for answers. I built a RAG-powered chatbot that reads from internal documents and answers queries instantly — no more manual lookups. The same platform predicts insurance premiums from customer profiles and surfaces everything through a clean Streamlit dashboard. Scored 9/10 by GUVI mentors.</p>
           <div class="project-stack">
             <span class="stack-pill">Python</span>
-            <span class="stack-pill">NLTK</span>
-            <span class="stack-pill">TF-IDF</span>
+            <span class="stack-pill">LangChain</span>
+            <span class="stack-pill">Gemini API</span>
+            <span class="stack-pill">RAG</span>
+            <span class="stack-pill">ChromaDB</span>
             <span class="stack-pill">scikit-learn</span>
+            <span class="stack-pill">PostgreSQL</span>
             <span class="stack-pill">Streamlit</span>
           </div>
           <div class="project-footer">
             <span class="gh-link">
               <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">15K+ records</span>
+          </div>
+        </a>
+
+        <!-- 2. Clinical Trial -->
+        <a class="project-card" href="https://github.com/Rajesh-Narayanamoorthy/Clinical-Trial-Disease-Classification" target="_blank">
+          <div class="tag-row">
+            <span class="project-tag tag-nlp">NLP</span>
+            <span class="project-tag tag-ml">Text Classification</span>
+          </div>
+          <h3 class="project-title">Clinical Trial Disease Classification</h3>
+          <p class="project-desc">Medical researchers needed a faster way to sort 60,000 clinical trial summaries into disease categories. I built an NLP pipeline — cleaning raw medical text, extracting TF-IDF features, and training a tuned SVM classifier — that does in seconds what used to take days of manual review.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">NLTK</span>
+            <span class="stack-pill">TF-IDF</span>
+            <span class="stack-pill">scikit-learn</span>
+            <span class="stack-pill">SVM</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </span>
             <span class="record-count">60K records</span>
           </div>
         </a>
 
-        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/mobile-segmentation-recommendation" target="_blank">
-          <span class="project-tag tag-ml">Unsupervised ML</span>
-          <h3 class="project-title">Mobile Product Segmentation & Recommendation</h3>
-          <p class="project-desc">Turned 50,000 global mobile product reviews into a consumer intelligence tool — uncovering how customers perceive phones beyond price and brand, with a live recommendation engine deployed on Streamlit.</p>
-          <div class="project-stack">
-            <span class="stack-pill">Python</span>
-            <span class="stack-pill">K-Means</span>
-            <span class="stack-pill">Cosine Similarity</span>
-            <span class="stack-pill">Streamlit</span>
-            <span class="stack-pill">scikit-learn</span>
+        <!-- 3. Marketing Campaign -->
+        <a class="project-card" href="https://github.com/Rajesh-Narayanamoorthy/Marketing-Campaign-Analysis" target="_blank">
+          <div class="tag-row">
+            <span class="project-tag tag-ml">Supervised Learning</span>
           </div>
-          <div class="project-footer">
-            <span class="gh-link">
-              <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              View on GitHub
-            </span>
-            <span class="record-count">50K records</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/marketing-campaign-project" target="_blank">
-          <span class="project-tag tag-ml">Supervised ML</span>
-          <h3 class="project-title">Marketing Campaign Performance Analysis</h3>
-          <p class="project-desc">Analysed 161,000+ campaigns across D2C beauty brands — built revenue forecasting and profitability classification models to help teams prioritize budget before campaigns launch.</p>
+          <h3 class="project-title">Bank Marketing Campaign Analysis</h3>
+          <p class="project-desc">A bank was running campaigns without knowing which customers were worth calling. I analysed 41,000 records to find the patterns that separate subscribers from non-subscribers — call duration, balance, previous contact — and built a classifier that helps teams focus their outreach where it actually converts.</p>
           <div class="project-stack">
             <span class="stack-pill">Python</span>
             <span class="stack-pill">Random Forest</span>
             <span class="stack-pill">scikit-learn</span>
-            <span class="stack-pill">Regression</span>
-            <span class="stack-pill">Classification</span>
+            <span class="stack-pill">Matplotlib</span>
+            <span class="stack-pill">Seaborn</span>
           </div>
           <div class="project-footer">
             <span class="gh-link">
               <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </span>
-            <span class="record-count">161K records</span>
+            <span class="record-count">41K records</span>
           </div>
         </a>
 
-        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/International-Debt-Analysis-System" target="_blank">
-          <span class="project-tag tag-bi">Data Engineering</span>
-          <h3 class="project-title">International Debt Analysis System</h3>
-          <p class="project-desc">End-to-end analytics pipeline on World Bank debt statistics — structured MySQL storage, 30 SQL queries, and an interactive Streamlit dashboard for multi-country macro-finance insights.</p>
+        <!-- 4. Mobile Segmentation -->
+        <a class="project-card" href="https://github.com/Rajesh-Narayanamoorthy/Mobile-Market-Segmentation" target="_blank">
+          <div class="tag-row">
+            <span class="project-tag tag-ml">Unsupervised Learning</span>
+          </div>
+          <h3 class="project-title">Mobile Market Segmentation</h3>
+          <p class="project-desc">The mobile market looked like one big category until I ran K-Means on 1,000+ device specs. Three natural segments emerged — Budget, Mid-range, and Premium — each with distinct patterns in RAM, battery, and camera. PCA kept the analysis visual and the clusters interpretable.</p>
           <div class="project-stack">
             <span class="stack-pill">Python</span>
-            <span class="stack-pill">MySQL</span>
-            <span class="stack-pill">pandas</span>
-            <span class="stack-pill">Streamlit</span>
+            <span class="stack-pill">K-Means</span>
+            <span class="stack-pill">PCA</span>
+            <span class="stack-pill">scikit-learn</span>
             <span class="stack-pill">Plotly</span>
           </div>
           <div class="project-footer">
@@ -607,27 +672,56 @@
               <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </span>
-            <span class="record-count">World Bank data</span>
+            <span class="record-count">1K+ devices</span>
           </div>
         </a>
 
-        <a class="project-card" href="https://github.com/RajeshNarayanamoorthy10/sales-management-system" target="_blank">
-          <span class="project-tag tag-bi">Analytics System</span>
-          <h3 class="project-title">Sales Management System</h3>
-          <p class="project-desc">Branch-level sales management system built end-to-end — MySQL schema, Python ETL pipeline, 15 SQL queries with window functions, and a role-based Streamlit dashboard with admin and viewer access.</p>
+        <!-- 5. International Debt -->
+        <a class="project-card" href="https://github.com/Rajesh-Narayanamoorthy/International-Debt-Analysis" target="_blank">
+
+          <div class="tag-row">
+            <span class="project-tag tag-bi">Data Engineering</span>
+            <span class="project-tag tag-bi">SQL Analytics</span>
+          </div>
+          <h3 class="project-title">International Debt Analysis</h3>
+          <p class="project-desc">World Bank publishes debt data for 124 countries — but raw numbers don't tell a story. I built a SQL-first analysis pipeline using CTEs, window functions, and multi-table joins to surface which countries carry the most debt, how repayment behaviour differs, and where the risk concentrations are.</p>
           <div class="project-stack">
-            <span class="stack-pill">Python</span>
-            <span class="stack-pill">MySQL</span>
-            <span class="stack-pill">SQLAlchemy</span>
-            <span class="stack-pill">Streamlit</span>
-            <span class="stack-pill">pandas</span>
+            <span class="stack-pill">PostgreSQL</span>
+            <span class="stack-pill">SQL</span>
+            <span class="stack-pill">CTEs</span>
+            <span class="stack-pill">Window Functions</span>
+            <span class="stack-pill">Pandas</span>
           </div>
           <div class="project-footer">
             <span class="gh-link">
               <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </span>
-            <span class="record-count">RBAC + Analytics</span>
+            <span class="record-count">124 countries · World Bank data</span>
+          </div>
+        </a>
+
+        <!-- 6. Sales Management System -->
+        <a class="project-card" href="https://github.com/Rajesh-Narayanamoorthy/sales-management-system" target="_blank">
+          <div class="tag-row">
+            <span class="project-tag tag-bi">Analytics System</span>
+            <span class="project-tag tag-bi">Full-Stack</span>
+          </div>
+          <h3 class="project-title">Sales Management System</h3>
+          <p class="project-desc">Built a full-stack sales analytics platform from scratch — a MySQL backend stores product, customer, and transaction data; SQLAlchemy connects it to a Python layer that computes revenue summaries and trend metrics; Streamlit turns all of it into an interactive dashboard with live filters. It's the kind of internal tool a small business would actually use.</p>
+          <div class="project-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">MySQL</span>
+            <span class="stack-pill">SQLAlchemy</span>
+            <span class="stack-pill">Streamlit</span>
+            <span class="stack-pill">Pandas</span>
+          </div>
+          <div class="project-footer">
+            <span class="gh-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </span>
+            <span class="record-count">Python · MySQL · Streamlit</span>
           </div>
         </a>
 
@@ -643,43 +737,48 @@
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">SQL</span>
+            <span class="skill-tag">DAX</span>
           </div>
         </div>
         <div>
-          <p class="skill-group-label">ML & Data Science</p>
+          <p class="skill-group-label">Generative AI</p>
           <div class="skill-tags">
-            <span class="skill-tag">Regression</span>
-            <span class="skill-tag">Classification</span>
-            <span class="skill-tag">Clustering</span>
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">Gemini API</span>
+            <span class="skill-tag">RAG</span>
+            <span class="skill-tag">ChromaDB</span>
           </div>
         </div>
         <div>
-          <p class="skill-group-label">ML Libraries</p>
+          <p class="skill-group-label">ML &amp; Data Science</p>
           <div class="skill-tags">
             <span class="skill-tag">scikit-learn</span>
-            <span class="skill-tag">pandas</span>
-            <span class="skill-tag">NumPy</span>
             <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">Keras</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Visualization & BI</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">NLTK</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
             <span class="skill-tag">Plotly</span>
           </div>
         </div>
         <div>
           <p class="skill-group-label">Data Engineering</p>
           <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">MySQL</span>
             <span class="skill-tag">SQLAlchemy</span>
             <span class="skill-tag">ETL</span>
             <span class="skill-tag">EDA</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Visualization &amp; BI</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Power Query</span>
           </div>
         </div>
         <div>
@@ -698,27 +797,39 @@
     <section id="experience">
       <p class="section-label">Experience</p>
       <div class="exp-list">
+
         <div class="exp-item">
           <div>
-            <p class="exp-role">Data Science & ML Engineer — Structured Career Transition</p>
-            <p class="exp-company">GUVI Bootcamp · IIT Madras Incubated · Bengaluru</p>
+            <p class="exp-role">Data Science &amp; ML Engineer — Trainee</p>
+            <p class="exp-company">GUVI · IIT Madras Incubated · Chennai</p>
           </div>
-          <p class="exp-dates">Nov 2024 – Present</p>
+          <p class="exp-dates">Mar 2026 – Present</p>
         </div>
+
+        <div class="exp-item career-break">
+          <div>
+            <p class="exp-role">Career Break · Child Care &amp; Structured Upskilling</p>
+            <p class="exp-company">Personal · Chennai</p>
+          </div>
+          <p class="exp-dates">Nov 2024 – Feb 2026</p>
+        </div>
+
         <div class="exp-item">
           <div>
-            <p class="exp-role">Specialist — Operations Analytics & Reporting</p>
+            <p class="exp-role">Associate — M365 &amp; Collaboration</p>
             <p class="exp-company">LTIMindtree · Chennai</p>
           </div>
-          <p class="exp-dates">Jul 2021 – Nov 2024</p>
+          <p class="exp-dates">Jul 2022 – Nov 2024</p>
         </div>
+
         <div class="exp-item">
           <div>
-            <p class="exp-role">Technical Analyst</p>
-            <p class="exp-company">Infosys · Mysore</p>
+            <p class="exp-role">Systems Engineer — M365 Support</p>
+            <p class="exp-company">Infosys · Mysuru </p>
           </div>
-          <p class="exp-dates">Dec 2017 – Jul 2021</p>
+          <p class="exp-dates">Nov 2017 – Jul 2022</p>
         </div>
+
       </div>
     </section>
 
@@ -727,8 +838,8 @@
       <p class="section-label">About</p>
       <div class="about-grid">
         <div class="about-text">
-          <p>I spent 7 years in enterprise technology — managing large-scale Microsoft 365 environments at Infosys and leading operations analytics at LTIMindtree — before making a deliberate transition into Data Science and Machine Learning.</p>
-          <p>What drives me is the combination of business intuition and technical depth: asking the right question before touching the data, then building something that actually answers it. I think in pipelines — from messy raw data to clean insights to something a non-technical stakeholder can act on.</p>
+          <p>I spent 7 years in enterprise technology — managing large-scale Microsoft 365 environments at Infosys and leading M365 operations at LTIMindtree — before making a deliberate transition into Data Science and Machine Learning.</p>
+          <p>I took a career break to be present for my daughter's early years, and used that time to build a proper foundation: Python, statistics, SQL, and eventually full ML pipelines. Six projects later, the capstone was an end-to-end Generative AI platform for Acko Insurance.</p>
           <p>Based in Chennai. Open to Data Scientist and ML Engineer roles.</p>
         </div>
         <div>
@@ -736,11 +847,11 @@
           <ul class="cert-list">
             <li class="cert-item">
               <span class="cert-dot"></span>
-              <span>Microsoft Power BI Data Analyst — PL-300 Certified (2024)</span>
+              <span>GUVI — Data Science &amp; ML Engineer (2026)</span>
             </li>
             <li class="cert-item">
               <span class="cert-dot"></span>
-              <span>Data Science & ML Bootcamp — GUVI, IIT Madras Incubated</span>
+              <span>Microsoft Power BI Data Analyst — PL-300 Certified (2024)</span>
             </li>
           </ul>
         </div>
